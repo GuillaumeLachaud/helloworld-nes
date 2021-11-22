@@ -1,0 +1,8 @@
+{
+  "filename": "helloworld.nesproj",
+  "filepath": "/Users/guillaumelachaud/Code/NES/src/helloworld.nesproj",
+  "bank": 1,
+  "nametable": "/Users/guillaumelachaud/Code/NES/src/helloworld.nam",
+  "tileset": "/Users/guillaumelachaud/Code/NES/src/helloworld.chr",
+  "palettes": "/Users/guillaumelachaud/Code/NES/src/helloworld.pal"
+}
