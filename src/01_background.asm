@@ -1,0 +1,403 @@
+.include "constants.inc"
+
+.segment "CODE"
+.export load_background_01
+.proc load_background_01
+  LDA PPUSTATUS
+
+  LDX #$11 ; We start with tile #11
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$22
+  STA PPUADDR ; We set the address of the first nametable tile
+
+  STX PPUDATA ; And push the value of the tile we want to render there
+
+  ; finally, attribute table
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$c0
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$03
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$d0
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$c6
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$d9
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$f9
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$de
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+
+  LDA #$22
+  STA PPUADDR
+  LDA #$37
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$e5
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+
+  LDA #$22
+  STA PPUADDR
+  LDA #$ac
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$eb
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+
+  LDA #$22
+  STA PPUADDR
+  LDA #$d5
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$ed
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+
+  LDX #$10 ; We continue with tile #10
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$6b
+  STA PPUADDR ; We set the address of the first nametable tile
+
+  STX PPUDATA ; And push the value of the tile we want to render there
+
+  ; finally, attribute table
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$c2
+  STA PPUADDR
+  LDA #%11111111; palette#3 on all 2x2 tiles areas
+  STA PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$7d
+  STA PPUADDR
+
+  STX PPUDATA
+
+  ; finally, attribute table
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$c7
+  STA PPUADDR
+  LDA #%11111111;
+  STA PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$91
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$d1
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$cc
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$f8
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$ce
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$1b
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$d6
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$22
+  STA PPUADDR
+  LDA #$3c
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$e7
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$78
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$f6
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$a1
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$f8
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$78
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$f6
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$8a
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$fa
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$81
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$f8
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDX #$12 ; Finally, tile #12
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$4b
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$c2
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$b8
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$ce
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$20
+  STA PPUADDR
+  LDA #$bd
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$cf
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$6f
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$d3
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$21
+  STA PPUADDR
+  LDA #$a4
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$d9
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$22
+  STA PPUADDR
+  LDA #$85
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$e9
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+  LDA #$23
+  STA PPUADDR
+  LDA #$3a
+  STA PPUADDR
+
+  STX PPUDATA
+
+  LDA PPUSTATUS
+  LDA #$23
+  STA PPUADDR
+  LDA #$f6
+  STA PPUADDR
+  LDA #%11111111
+  STA PPUDATA
+
+
+  RTS
+
+.endproc

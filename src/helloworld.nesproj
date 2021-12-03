@@ -1,8 +1,8 @@
 {
   "filename": "helloworld.nesproj",
-  "filepath": "/Users/guillaumelachaud/Code/NES/src/helloworld.nesproj",
+  "filepath": "/Users/guillaumelachaud/Code/NES/helloworld-nes/src/helloworld.nesproj",
   "bank": 1,
-  "nametable": "/Users/guillaumelachaud/Code/NES/src/helloworld.nam",
-  "tileset": "/Users/guillaumelachaud/Code/NES/src/helloworld.chr",
-  "palettes": "/Users/guillaumelachaud/Code/NES/src/helloworld.pal"
+  "nametable": "/Users/guillaumelachaud/Code/NES/helloworld-nes/src/helloworld.nam",
+  "tileset": "/Users/guillaumelachaud/Code/NES/helloworld-nes/src/helloworld.chr",
+  "palettes": "/Users/guillaumelachaud/Code/NES/helloworld-nes/src/helloworld.pal"
 }

@@ -19,13 +19,16 @@
 .endproc
 
 .import reset_handler
+.import load_background_01
 
 .segment "RODATA"
 palettes:
+; background palettes, mostly all the same repeated
 .byte $32, $2c, $25, $00
 .byte $32, $2c, $25, $00
 .byte $32, $2c, $25, $00
-.byte $32, $2c, $25, $00
+.byte $32, $09, $19, $29
+; sprites palettes, all the same repeated
 .byte $32, $2c, $25, $00
 .byte $32, $2c, $25, $00
 .byte $32, $2c, $25, $00
@@ -65,26 +68,7 @@ load_sprites:
   CPX #$16
   BNE load_sprites
 
-load_background:
-  LDA PPUSTATUS
-
-  LDX #$10 ; We start with tile #10
-
-  LDA #$20
-  STA PPUADDR
-  LDA #$22
-  STA PPUADDR
-
-  STX PPUDATA
-
-  LDA #$20
-  STA PPUADDR
-  LDA #$d1
-  STA PPUADDR
-
-  STX PPUDATA
-
-
+  JSR load_background_01
 
 vblankwait:       ; wait for another vblank before continuing
   BIT PPUSTATUS
